@@ -1,6 +1,6 @@
 {
   "name": "react-gbus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ultra lightweight global event bus hook for react",
   "author": "harshzalavadiya",
   "license": "MIT",
@@ -17,7 +17,6 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "@rollup/plugin-url": "^4.0.0",
     "mitt": "^1.2.0"
   },
   "peerDependencies": {
@@ -25,16 +24,17 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.15",
+    "@rollup/plugin-url": "^4.0.0",
+    "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "rollup": "^1.27.8",
+    "rollup": "^1.28.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.25.3",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.4"
   },
   "files": [
     "dist"
