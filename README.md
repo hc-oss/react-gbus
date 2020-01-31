@@ -23,33 +23,30 @@ npm install --save react-gbus
 ```tsx
 import React, { useState } from "react";
 
-import BusProvider, { useListener, useBus, emit } from "react-gbus";
+import BusProvider, { useListener, emit } from "react-gbus";
 
-const BEVENT = "bulb_event";
+const FRUIT_CHANGE = "fch";
 
-function Bulb() {
-  const [isBulbOn, setIsBulbOn] = useState(false);
+function FruitViewer() {
+  const [Fruit, setFruit] = useState("Choose your Fruit");
 
-  useListener(payload => {
-    console.log(payload);
-    setIsBulbOn(payload);
-  }, BEVENT);
+  useListener(setFruit, [FRUIT_CHANGE]);
 
-  return <div>{isBulbOn ? "💡" : "❌"}</div>;
+  return <h1>{Fruit}</h1>;
 }
 
-const BulbOn = () => <button onClick={() => emit(BEVENT, true)}>On</button>;
-
-const BulbOff = () => {
-  const bus = useBus(); // alternative way to emit
-  return <button onClick={() => bus.emit(BEVENT, false)}>Off</button>;
-};
+const FruitChooser = () => (
+  <div>
+    <button onClick={() => emit(FRUIT_CHANGE, "🍎")}>Apple</button>
+    <button onClick={() => emit(FRUIT_CHANGE, "🥭")}>Mango</button>
+    <button onClick={() => emit(FRUIT_CHANGE, "🍍")}>Pineapple</button>
+  </div>
+);
 
 const App = () => (
   <BusProvider>
-    <Bulb />
-    <BulbOn />
-    <BulbOff />
+    <FruitViewer />
+    <FruitChooser />
   </BusProvider>
 );
 ```

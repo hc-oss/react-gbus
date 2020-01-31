@@ -7,13 +7,13 @@ export const BusContext = React.createContext(iMitt);
 
 export const useBus = () => React.useContext(BusContext);
 
-export const useListener = (fn, name: string) => {
+export const useListener = (fn, events: string[]) => {
   const bus = useBus();
 
   React.useEffect(() => {
-    bus.on(name, fn);
+    events.map(e => bus.on(e, fn));
     return () => {
-      bus.off(name, fn);
+      events.map(e => bus.off(e, fn));
     };
   }, [bus, name, fn]);
 };
