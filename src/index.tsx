@@ -15,7 +15,7 @@ export const useListener = (fn, events: string[]) => {
     return () => {
       events.map(e => bus.off(e, fn));
     };
-  }, [bus, name, fn]);
+  }, [bus, events, fn]);
 };
 
 export const emit = (name, fn) => iMitt.emit(name, fn);

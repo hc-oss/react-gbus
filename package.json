@@ -1,6 +1,6 @@
 {
   "name": "react-gbus",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ultra lightweight global event bus hook for react",
   "author": "harshzalavadiya",
   "license": "MIT",
