@@ -18,7 +18,7 @@ export const useListener = (fn, events: string[]) => {
   }, [bus, events, fn]);
 };
 
-export const emit = (name, fn) => iMitt.emit(name, fn);
+export const emit = iMitt.emit;
 
 const BusProvider = ({ children }) => (
   <BusContext.Provider value={iMitt}>{children}</BusContext.Provider>
