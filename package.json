@@ -17,7 +17,7 @@
     "start": "rollup -c -w"
   },
   "dependencies": {
-    "mitt": "^1.2.0"
+    "mitt": "^2.1.0"
   },
   "peerDependencies": {
     "react": "^16.12.0",
